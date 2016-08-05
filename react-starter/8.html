@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      let {Component}=React
+      
+     class Demo8 extends Component{
+        
+        constructor(props){
+            super(props)
+            this.state={text:""}
+        }
+        onType(e){
+            this.setState({text:e.target.value});
+        }
+        render(){
+            let divStyle={
+                background:'blue'
+            }
+            return(
+            
+            <div>
+                <style>{`
+                    .list{
+                        color:red;
+                    }
+                    #demo8{
+                        font-size:20px;
+                    }
+                `}
+                </style>
+                <ul className="list" style={divStyle} id="demo8">
+                    {
+                        this.props.list.map((v)=>{
+                            return(
+                                <li key={v.id}>{v.content}</li>
+                            ); 
+                        })
+                    }
+                </ul>
+            </div>
+            )
+        }
+     }
+     let content=[{
+        id:1,
+        content:"hello"
+     },{
+        id:2,
+        content:"foo"
+     },{
+        id:3,
+        content:"bar"
+     }]
+      ReactDOM.render(
+        <Demo8 list={content}/>,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>

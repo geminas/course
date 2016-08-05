@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      let {Component}=React
+
+      class TipBar extends Component{
+        render(){
+            return(
+                <div>
+                    <h1>This number is counted to :{this.props.title}</h1>
+                </div>
+            );
+        }
+      }
+
+      class Demo4 extends Component{
+
+        constructor(props){
+         
+            super(props);
+            this.state={
+                count:0
+            }
+            
+        }
+        componentWillMount(){
+            setInterval(()=>{
+                console.log("Hey")
+                this.setState({count:this.state.count+1})
+            },2000)
+        }
+        render(){
+            return (
+                <div>
+                    <div>{this.props.content}</div>
+                    <button onClick={this.props.clickHandler}>
+                        Click Me
+                    </button>
+                    <div>This Is the Changing State:{this.state.count}
+                    </div>
+                    <TipBar title={this.state.count}/>
+                </div>
+            );
+        }
+      }
+     let content="Hey Click That Button!"
+     let sayHi=()=>{
+        alert("HI,Click")
+     }
+      ReactDOM.render(
+        <Demo4 content={content} clickHandler={sayHi}/>,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>

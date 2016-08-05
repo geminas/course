@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <div id="example2"></div>
+    <script type="text/babel">
+      let {Component}=React
+      class HelloComp extends Component{
+            render(){
+                return (
+                    <div>THis IS HELLO COMPONENT!!</div>
+                );
+            }
+        }
+      ReactDOM.render(
+        <HelloComp/>,
+        document.getElementById('example')
+      );
+      ReactDOM.render(
+        <HelloComp/>,
+        document.getElementById('example2')
+      );
+    </script>
+  </body>
+</html>

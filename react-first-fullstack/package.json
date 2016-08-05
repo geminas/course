@@ -1,0 +1,44 @@
+{
+  "name": "gemini",
+  "version": "0.1.0",
+  "private": true,
+
+  "dependencies": {
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react":"*",
+    "babel-core":"*",
+    "babel-loader":"*",
+    "co": "^4.6.0",
+    "debug": "^2.2.0",
+    "jade": "~1.11.0",
+    "koa": "^1.1.2",
+    "koa-bodyparser": "^2.0.1",
+    "koa-json": "^1.1.1",
+    "koa-logger": "^1.3.0",
+    "koa-onerror": "^1.2.1",
+    "koa-router": "^5.3.0",
+    "koa-static": "^1.5.2",
+    "koa-views": "^3.1.0",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "gulp":"*",
+    "jslint":"*",
+    "gulp-notify":"*",
+    "gulp-minify-css":"*",
+    "gulp-autoprefixer":"*",
+    "gulp-sourcemaps":"*",
+    "gulp-jslint":"*",
+    "gulp-uglify":"*",
+    "gulp-rename":"*",
+    "gulp-concat":"*",
+    "gulp-clean":"*",
+    "webpack":"*",
+    "gulp-webpack":"*",
+    "react-addons-transition-group":"*",
+    "react-router":"*"
+    },
+  "devDependencies": {
+    "node-sass": "^3.8.0",
+    "sass-loader": "^4.0.0"
+  }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <div id="example2"></div>
+    <script type="text/babel">
+      let {Component}=React
+      let HelloComp = React.createClass({
+        getInitialState(){
+            return{
+                text:"This is State"
+            }
+        },
+        componentWillMount(){
+            console.log("Component Will Mount");
+        },
+        componentDidMount(){
+            console.log("Component Did Mount");
+        },
+        componentWillReceiveProps(){
+            console.log("Component Will Receive Props");
+        },
+        componentWillUpdate(){
+            console.log("Component Will Update")
+        },
+        componentDidUpdate(){
+            console.log("Component Did Update")
+        },
+        changeState(){
+            this.setState({text:this.state.text+"!"})
+        },
+        render(){
+                return (
+                    <div className="comp">
+                        <style>{`
+                            .title{
+                                padding:5px;
+                                margin-bottom:5px;
+                            }
+                            button{
+                                margin-left:5px;
+                            }
+                            .comp{
+                                border:solid black 1px;
+                                margin:20px;
+                                width:300px;
+                            }
+                        `}</style>
+                        <div className="title">THis IS HELLO COMPONENT!!</div>
+                        <button onClick={this.changeState} >ClickMe</button>
+                        <div style={{margin:5}}>{this.state.text}</div>
+                    </div>
+                );
+            }
+      })
+      
+      ReactDOM.render(
+        <HelloComp/>,
+        document.getElementById('example')
+      );
+      ReactDOM.render(
+        <HelloComp/>,
+        document.getElementById('example2')
+      );
+    </script>
+  </body>
+</html>
