@@ -40,7 +40,7 @@
                 return (
                     <div className="comp">
                         <style>{`
-                            .title{
+                            .hello-title{
                                 padding:5px;
                                 margin-bottom:5px;
                             }
@@ -53,9 +53,9 @@
                                 width:300px;
                             }
                         `}</style>
-                        <div className="title">THis IS HELLO COMPONENT!!</div>
+                        <div className="hello-title">THis IS HELLO COMPONENT!!</div>
                         <button onClick={this.changeState} >ClickMe</button>
-                        <div style={{margin:5}}>{this.state.text}</div>
+                        <div style={{margin:5,color:'red'}}>{this.state.text}</div>
                     </div>
                 );
             }

@@ -9,8 +9,21 @@
   </head>
   <body>
     <div id="example"></div>
+    <div id="example2"></div>
     <script type="text/babel">
       let {Component}=React
+      class Demo3 extends Component{
+        render(){
+          return(
+            <ul>
+              <li> Name:{this.props.item.name}</li>
+              <li> Age:{this.props.item.age}</li>
+              <li> Gender:{this.props.item.gender}</li>
+            </ul>
+          )
+        }
+      }
+
       class Demo2 extends Component{
         render(){
             return (
@@ -28,9 +41,18 @@
      let sayHi=()=>{
         alert("HI,Click")
      }
+     let student={
+      name:"小猪",
+      age:18,
+      gender:"male"
+     }
       ReactDOM.render(
         <Demo2 content={content} clickHandler={sayHi}/>,
         document.getElementById('example')
+      );
+      ReactDOM.render(
+        <Demo3 item={student}/>,
+        document.getElementById('example2')
       );
     </script>
   </body>
