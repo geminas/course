@@ -23,7 +23,7 @@
         }
         render(){
             let divStyle={
-                background:'blue'
+                background:'white'
             }
             return(
             
@@ -41,7 +41,7 @@
                     {
                         this.props.list.map((v)=>{
                             return(
-                                <li key={v.id}>{v.content}</li>
+                                <li key={v.id}>id:{v.id},content:{v.content}</li>
                             ); 
                         })
                     }
@@ -59,7 +59,7 @@
      },{
         id:3,
         content:"bar"
-     }]
+     },{id:4,content:"德玛西亚"}]
       ReactDOM.render(
         <Demo8 list={content}/>,
         document.getElementById('example')
@@ -67,3 +67,4 @@
     </script>
   </body>
 </html>
+
