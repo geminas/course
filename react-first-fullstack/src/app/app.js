@@ -7,7 +7,7 @@ import Demo2 from '../components/demo2/demo2.js'
 import TodoApp from '../components/todolist/todolist.js'
 
 ReactDom.render((
-	<TodoApp items={[]}/>
+	<TodoApp items={["aaa"]}/>
 ),document.getElementById('example'));
 
 // ReactDom.render((

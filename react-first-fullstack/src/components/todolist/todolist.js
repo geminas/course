@@ -1,6 +1,7 @@
 import React,{Component,PropType} from 'react'
+var createReactClass = require('create-react-class');
 
-let TodoApp =React.createClass({
+let TodoApp =createReactClass({
     getInitialState(){
         return {
             items:this.props.items||[]
@@ -12,7 +13,8 @@ let TodoApp =React.createClass({
     },
     deleteTodo(id){
         this.state.items.map((val,key)=>{
-            if(val.id==id){
+            if(key==id){
+                
                 let newitems=[...this.state.items]
                 newitems.splice(key,1)
                 this.setState({items:newitems})
@@ -34,19 +36,19 @@ class TodoView extends Component{
     handleDelete(id){
        // console.log(e)
         //console.log(e.target)
-        console.log(id)
+        console.log("hahah",id)
         this.props.deleteTodo(id)
     }
     render(){
         return (
             <ul>
                 {
-                    this.props.items.map(v=>{
+                    this.props.items.map((v,k)=>{
                         return(
-                            <li key={v.id}>
-                                <label>{v.id}:</label>
+                            <li key={k}>
+                                <label>{k}:</label>
                                 <span>{v.msg}</span>
-                                <span><button data-id={v.id} onClick={()=>{this.handleDelete(v.id)}}>DELETE</button></span>
+                                <span><button data-id={v.id} onClick={()=>{this.handleDelete(k)}}>DELETE</button></span>
                             </li>
                         )
                     })

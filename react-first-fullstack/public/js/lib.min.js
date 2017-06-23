@@ -43,18 +43,18 @@
 /******/ ({
 
 /***/ 0:
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	__webpack_require__(177);
+	__webpack_require__(189);
 
-	var Bootbox = window.Bootbox = __webpack_require__(178);
+	var Bootbox = window.Bootbox = __webpack_require__(190);
 
-/***/ },
+/***/ }),
 
-/***/ 177:
-/***/ function(module, exports, __webpack_require__) {
+/***/ 189:
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*eslint-disable no-unused-vars*/
 	/*!
@@ -10132,10 +10132,10 @@
 	} );
 
 
-/***/ },
+/***/ }),
 
-/***/ 178:
-/***/ function(module, exports, __webpack_require__) {
+/***/ 190:
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 * bootbox.js [v4.4.0]
@@ -10150,7 +10150,7 @@
 	  "use strict";
 	  if (true) {
 	    // AMD. Register as an anonymous module.
-	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(177)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(189)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	  } else if (typeof exports === "object") {
 	    // Node. Does not work with strict CommonJS, but
 	    // only CommonJS-like environments that support module.exports,
@@ -11124,6 +11124,6 @@
 	}));
 
 
-/***/ }
+/***/ })
 
 /******/ });
