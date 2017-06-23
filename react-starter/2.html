@@ -7,24 +7,49 @@
     <script src="react-dom.js"></script>
     <script src="browser.min.js"></script>
   </head>
+  <style>
+    .comp{
+      color:red;
+      font-size:30px;
+      
+    }
+    .comp2{
+      color:brown;
+      font-size:20px;
+    }
+  </style>
   <body>
     <div id="example"></div>
     <div id="example2"></div>
     <script type="text/babel">
       let {Component}=React
+      var c1=13
+      setInterval(()=>{c1++;console.log(c1)},1000)
+      var hello=()=>{console.log("Hello")}
       class HelloComp extends Component{
             render(){
+                console.log(this.props)
+                if(this.props.hello !==undefined){
+                  this.props.hello()
+                }
                 return (
-                    <div>THis IS HELLO COMPONENT!!</div>
+                    <div className="comp" >THis IS HELLO COMPONENT!!<span>{this.props.cc}</span></div>
                 );
             }
-        }
+      }
+      class HelloComp2 extends Component{
+          render(){
+            return (
+              <div className="comp2">This Is The Component 2</div>
+            );
+          }
+      }
       ReactDOM.render(
-        <HelloComp/>,
+        <HelloComp foo="bar" cc={c1} hello={hello}/>,
         document.getElementById('example')
       );
       ReactDOM.render(
-        <HelloComp/>,
+        <HelloComp2/>,
         document.getElementById('example2')
       );
     </script>

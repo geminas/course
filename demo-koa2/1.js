@@ -25,6 +25,11 @@ app.use(ctx => {
   ctx.body = 'Hello World';
 });
 
+app.use(ctx=>{
+  ctx;
+  ctx.request;
+  ctx.response;
+})
 //app.listen(3000);
 http.createServer(app.callback()).listen(3000);
 http.createServer(app.callback()).listen(3001);

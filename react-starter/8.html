@@ -39,9 +39,9 @@
                 </style>
                 <ul className="list" style={divStyle} id="demo8">
                     {
-                        this.props.list.map((v)=>{
+                        this.props.list.map((v,k)=>{
                             return(
-                                <li key={v.id}>id:{v.id},content:{v.content}</li>
+                                <li key={k}>id:{k},content:{v.content}</li>
                             ); 
                         })
                     }

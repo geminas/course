@@ -11,7 +11,8 @@
     <div id="example"></div>
     <script type="text/babel">
       let {Component}=React
-
+      let {findDOMNode}=ReactDOM
+      var ccc=1
       class TipBar extends Component{
         render(){
             return(
@@ -22,6 +23,15 @@
         }
       }
 
+      class SpanBar extends Component{
+          render(){
+              return (
+                  <div>
+                    <span>The SpanBar Count is :{this.props.count}</span>
+                  </div>
+              );
+          }
+      }
       class Demo4 extends Component{
 
         constructor(props){
@@ -30,6 +40,11 @@
             this.state={
                 count:0
             }
+            setInterval(()=>{
+                //this.props.propcount+=1
+                ccc+=1
+                console.log(ccc)
+            },1000)
             
         }
         componentWillMount(){
@@ -37,6 +52,9 @@
                 console.log("Hey")
                 this.setState({count:this.state.count+1})
             },2000)
+        }
+        componentDidMount(){
+            console.log(findDOMNode(this))
         }
         render(){
             return (
@@ -46,6 +64,8 @@
                         Click Me
                     </button>
                     <div>This Is the Changing State:{this.state.count}
+                    <SpanBar count={this.state.count}/>
+                    <SpanBar count={this.props.propcount}/>
                     </div>
                     <TipBar title={this.state.count}/>
                 </div>
@@ -57,7 +77,7 @@
         alert("HI,Click")
      }
       ReactDOM.render(
-        <Demo4 content={content} clickHandler={sayHi}/>,
+        <Demo4 content={content} clickHandler={sayHi} propcount={ccc}/>,
         document.getElementById('example')
       );
     </script>

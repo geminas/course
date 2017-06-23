@@ -19,9 +19,22 @@ router
         if(ctx.query.id=='-1'){
             ctx.throw(400,"Error for the query....")
         }
-        ctx.body="I Got The Response:"+ctx.query.id
+        await next()
+        //ctx.body="I Got The Response:"+ctx.query.id
         
     })
+    // .all("/api0",async(ctx,next)=>{
+    //     var body=[]
+    //     ctx.request.on('data',chunk=>{
+    //         console.log("here")
+    //         body.push(chunk)
+    //     })
+    //     ctx.request.on('end',()=>{
+    //         console.log(Buffer.concat(body).toString())
+    //     })
+    //     console.log(body)
+    //     await next()
+    // })
 app.use(koabdy())
 app.use(router.routes())
 app.use(async (ctx,next)=>{

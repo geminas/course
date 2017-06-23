@@ -15,14 +15,24 @@
       let HelloComp = React.createClass({
         getInitialState(){
             return{
-                text:"This is State"
+                text:"This is State",
+                margin:5,
+                sign:["a","b","c","d","e","f","g"]
             }
+
         },
         componentWillMount(){
             console.log("Component Will Mount");
         },
         componentDidMount(){
             console.log("Component Did Mount");
+            setInterval(()=>{
+                this.setState({margin:this.state.margin+1})
+            },1000)
+            setInterval(()=>{
+                this.randomize()
+                console.log(this.state.sign)
+            },100)
         },
         componentWillReceiveProps(){
             console.log("Component Will Receive Props");
@@ -36,6 +46,20 @@
         changeState(){
             this.setState({text:this.state.text+"!"})
         },
+        randomize(){
+            var a1=Math.floor(Math.random()*this.state.sign.length)
+            var a2=Math.floor(Math.random()*this.state.sign.length)
+            var tmp1=this.state.sign[a1]
+            var tmp2=this.state.sign[a2]
+            console.log(a1,a2,tmp1,tmp2)
+            this.setState({
+                sign:this.state.sign.map((v,k)=>{
+                    if(k==a1)return tmp2;
+                    if(k==a2)return tmp1;
+                    return v;
+                })
+            })
+        },
         render(){
                 return (
                     <div className="comp">
@@ -45,17 +69,49 @@
                                 margin-bottom:5px;
                             }
                             button{
-                                margin-left:5px;
+                                margin-left:{this.state.margin}px;
                             }
                             .comp{
                                 border:solid black 1px;
                                 margin:20px;
                                 width:300px;
                             }
+                            .a,.b,.c,.d,.e,.f,.g{
+                                font-size:30px;
+                            }
+                            .a{
+                                color:red;
+                            }
+                            .b{
+                                color:green;
+                            }
+                            .c{
+                                color:blue;
+                            }
+                            .d{
+                                color:purple;
+                            }
+                            .e{
+                                color:orange;
+                            }
+                            .f{
+                                color:brown;
+                            }
                         `}</style>
                         <div className="hello-title">THis IS HELLO COMPONENT!!</div>
-                        <button onClick={this.changeState} >ClickMe</button>
+                        <button onClick={this.changeState} >ClickMeaa</button>
                         <div style={{margin:5,color:'red'}}>{this.state.text}</div>
+                        <div>
+                            <ul>
+                                {
+                                    this.state.sign.map((v,k)=>{
+                                        return(
+                                            <li key={k} className={v}>id:{v}</li>
+                                        ); 
+                                    })
+                                }
+                            </ul>
+                        </div>
                     </div>
                 );
             }

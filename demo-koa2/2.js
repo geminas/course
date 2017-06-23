@@ -1,9 +1,9 @@
 const Koa = require('koa');
 const app = new Koa();
 var router=require('koa-router')()
-//var logger=require('koa-logger')
+var logger=require('koa-logger')
 //var app=koa()
-//app.use(logger())
+app.use(logger())
 router
 .get('/',async (ctx,next)=>{
     console.log('this is the root')
@@ -45,6 +45,14 @@ router
 .del('/users/:id', async (ctx,next)=> {
   console.log('del the user:'+ctx.params.id)
   await next()
+});
+app.use(async (ctx,next)=>{
+    console.log(3)
+    var start = new Date;
+    await next();
+    var ms = new Date - start;
+    console.log('%s %s - %s', ctx.method, ctx.url, ms);
+    console.log(4)
 });
 app.use(router.routes())
 

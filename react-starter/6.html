@@ -11,7 +11,7 @@
     <div id="example"></div>
     <script type="text/babel">
       let {Component}=React
-
+      let {findDOMNode}=ReactDOM
      class Demo6 extends Component{
         constructor(props){
             super(props)
@@ -20,11 +20,15 @@
         onType(e){
             this.setState({text:e.target.value});
         }
+        onColor(e){
+            findDOMNode(this).style.color=e.target.value
+        }
         render(){
             return(
             <div>
-                <div>{this.state.text}</div>
+                <div className="title">{this.state.text}</div>
                 <input type="text" onChange={this.onType.bind(this)} placeholder="Type Here"/>
+                <input type="text" onChange={this.onColor.bind(this)} placeholder="Type Color Here"/>
             </div>
             )
         }
