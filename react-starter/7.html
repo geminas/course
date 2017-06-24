@@ -16,7 +16,7 @@
         getInitialState(){
             return{
                 text:"This is State",
-                margin:5,
+                margin:'5px',
                 sign:["a","b","c","d","e","f","g"]
             }
 
@@ -27,7 +27,7 @@
         componentDidMount(){
             console.log("Component Did Mount");
             setInterval(()=>{
-                this.setState({margin:this.state.margin+1})
+                this.setState({margin:''+Math.floor(Math.random()*50)+'px'})
             },1000)
             setInterval(()=>{
                 this.randomize()
@@ -69,7 +69,7 @@
                                 margin-bottom:5px;
                             }
                             button{
-                                margin-left:{this.state.margin}px;
+                                margin-left:5px;
                             }
                             .comp{
                                 border:solid black 1px;
@@ -100,7 +100,7 @@
                         `}</style>
                         <div className="hello-title">THis IS HELLO COMPONENT!!</div>
                         <button onClick={this.changeState} >ClickMeaa</button>
-                        <div style={{margin:5,color:'red'}}>{this.state.text}</div>
+                        <div style={{margin:this.state.margin}}>{this.state.text}</div>
                         <div>
                             <ul>
                                 {

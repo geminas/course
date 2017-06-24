@@ -28,6 +28,7 @@
               return (
                   <div>
                     <span>The SpanBar Count is :{this.props.count}</span>
+                    <TipBar title={this.props.count}/>
                   </div>
               );
           }
@@ -41,7 +42,7 @@
                 count:0
             }
             setInterval(()=>{
-                //this.props.propcount+=1
+               // this.props.propcount+=1
                 ccc+=1
                 console.log(ccc)
             },1000)

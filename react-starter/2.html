@@ -23,9 +23,12 @@
     <div id="example2"></div>
     <script type="text/babel">
       let {Component}=React
+      //let Component=React.Component
       var c1=13
       setInterval(()=>{c1++;console.log(c1)},1000)
       var hello=()=>{console.log("Hello")}
+      
+
       class HelloComp extends Component{
             render(){
                 console.log(this.props)
